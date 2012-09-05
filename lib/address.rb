@@ -1,3 +1,5 @@
+require_relative '../db/database_setup'
+
 module Transport
   class Address < ActiveRecord::Base
     belongs_to :user
