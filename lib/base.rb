@@ -1,0 +1,5 @@
+require_relative 'address'
+require_relative 'user'
+require_relative 'trip'
+require_relative 'ui'
+require_relative '../db/database_setup'

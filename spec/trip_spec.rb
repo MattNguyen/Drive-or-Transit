@@ -1,9 +1,8 @@
 require_relative 'spec_helper'
-require_relative '../lib/trip.rb'
 
 describe "Trip" do
   let(:trip) {
-    RestClient.stub!(:get).and_return(File.read('./driving.json'))
+    RestClient.stub!(:get).and_return(driving)
     Trip.new(origin: "15 Michael Lane, Millbrae, CA",
              destination: "717 California Street, San Francisco CA")
   }
@@ -22,7 +21,7 @@ describe "Trip" do
 
   context "some method" do
     it "should allow for optional parameters" do
-      RestClient.stub!(:get).and_return(File.read('./walking.json'))
+      RestClient.stub!(:get).and_return(walking)
       new_trip = Trip.new(origin: "15 Michael Lane, Millbrae, CA",
                           destination: "717 California Street, San Francisco CA",
                           mode: "walking")
@@ -46,7 +45,7 @@ end
 
 describe "comparison class methods" do
   before(:each) do
-    RestClient.stub!(:get).and_return(File.read('./transit.json'), File.read('./driving.json'))
+    RestClient.stub!(:get).and_return(transit, driving)
 
     @transit = Trip.new(origin: "15 Michael Lane, Millbrae, CA",
                         destination: "717 California Street, San Francisco CA",

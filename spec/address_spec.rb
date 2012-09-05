@@ -1,22 +1,14 @@
 require_relative 'spec_helper'
-require_relative '../lib/address.rb'
-include Transport
 
-
-describe Address do
-  # before(:each) do
-  #   user_mock = double "User"
-  #   user_mock.stub!(:id).should return(2)
-  # end
-
+describe 'Address' do
   context "#new" do
     it "instantiates object with address" do
-      @address = Address.new( street: "717 California St",
-                              city: "San francisco",
-                              state: "CA",
-                              zip: "94108",
-                              created_at: Time.now,
-                              user_id: 1)
+      @address = Address.new(street: "717 California St",
+                             city: "San francisco",
+                             state: "CA",
+                             zip: "94108",
+                             created_at: Time.now,
+                             user_id: 1)
       @address.state.should eq "CA"
       @address.zip.should eq "94108"
     end
