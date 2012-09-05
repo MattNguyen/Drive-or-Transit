@@ -1,6 +1,3 @@
-require 'active_record'
-require 'SQLite3'
-
 ActiveRecord::Base.establish_connection(
   :adapter  => "sqlite3",
   :database => "db/bart_drive.sqlite3"
