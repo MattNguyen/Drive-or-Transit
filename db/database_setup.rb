@@ -1,8 +1,17 @@
 require 'active_record'
+require 'SQLite3'
+require 'uri'
+
+db = URI.parse(ENV['DATABASE_URL'] || 'sqlite3://localhost/db/bart_drive.sqlite3')
 
 ActiveRecord::Base.establish_connection(
-  :adapter  => "sqlite3",
-  :database => "db/bart_drive.sqlite3"
+  :adapter  => db.scheme == 'postgres' ? 'postgresql' : db.scheme,
+  :host     => db.host,
+  :port     => db.port,
+  :username => db.user,
+  :password => db.password,
+  :database => db.path[1..-1],
+  :encoding => 'utf8'
 )
 
 unless File.exists?('db/bart_drive.sqlite3')
