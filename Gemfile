@@ -7,13 +7,13 @@ gem 'thin'
 gem 'shotgun'
 gem 'activerecord'
 gem 'haml'
-gem 'sqlite3'
 
 group :production do
   gem 'pg'
 end
 
 group :test, :development do
+  gem 'sqlite3'
   gem 'rspec'
   gem 'fakeweb'
   gem 'simplecov'
