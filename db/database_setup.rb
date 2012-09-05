@@ -13,7 +13,7 @@ ActiveRecord::Base.establish_connection(
   :encoding => 'utf8'
 )
 
-unless File.exists?('db/bart_drive.sqlite3')
+unless db.scheme == 'postgres' || File.exists?('db/bart_drive.sqlite3')
   puts 'creating database...'
   ActiveRecord::Schema.define do
       create_table :users do |t|
