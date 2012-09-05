@@ -1,5 +1,4 @@
 require 'active_record'
-require 'SQLite3'
 require 'uri'
 
 db = URI.parse(ENV['DATABASE_URL'] || 'sqlite3://localhost/db/bart_drive.sqlite3')
