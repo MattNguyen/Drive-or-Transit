@@ -17,17 +17,17 @@ unless File.exists?('db/bart_drive.sqlite3')
   puts 'creating database...'
   ActiveRecord::Schema.define do
       create_table :users do |t|
-        t.column :first_name, :string, :null => false
-        t.column :last_name, :string, :null => false
+        t.string :first_name, :null => false
+        t.string :last_name, :null => false
       end
 
       create_table :addresses do |t|
-        t.column :street, :string
-        t.column :city, :string
-        t.column :state, :string
-        t.column :zip, :string
-        t.column :created_at, :datetime, :default => 'CURRENT_TIMESTAMP'
-        t.column :user_id, :integer, :null => false
+        t.string   :street
+        t.string   :city
+        t.string   :state
+        t.string   :zip
+        t.datetime :created_at, :null => false
+        t.integer  :user_id, :null => false
       end
   end
 end
