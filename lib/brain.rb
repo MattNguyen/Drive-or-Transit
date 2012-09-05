@@ -1,7 +1,3 @@
-require_relative 'address'
-require_relative 'user'
-require_relative 'trip'
-
 module Transport
   class Brain
     attr_reader :user, :advice, :time_difference, :driving
@@ -35,7 +31,3 @@ module Transport
     end
   end
 end
-
-
-# 345 Laguna St, san francisco
-# 32 A st, san rafael

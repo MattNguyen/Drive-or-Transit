@@ -1,6 +1,4 @@
-require './lib/brain'
-require './lib/user'
-include Transport
+require_relative 'base'
 
 class UI
   def initialize
