@@ -7,6 +7,7 @@ gem 'thin'
 gem 'shotgun'
 gem 'activerecord'
 gem 'haml'
+gem 'sinatra-activerecord'
 
 group :production do
   gem 'pg'
